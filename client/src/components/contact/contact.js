@@ -1,84 +1,66 @@
-import React, {Component} from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import "../../express";
-import "./contact";
+import "./contact.css";
 
-class Contact extends Component() {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      email: '',
-      message: ''
-    }
-    }
-  
-    handleSubmit(e){
-      e.preventDefault();
-      axios({
-        method: "POST", 
-        url:"http://localhost:3001/send", 
-        data:  this.state
-      }).then((response)=>{
-        if (response.data.status === 'success'){
-          alert("Message Sent."); 
-          this.resetForm()
-        }else if(response.data.status === 'fail'){
-          alert("Message failed to send.")
-        }
-      })
-    }
-  
-    resetForm(){
-      
-       this.setState({name: "", email: "", message: ""})
-    }
-
-    onNameChange(event) {
-      this.setState({name: event.target.value})
+const Contact = (props) => {
+  const defaultContact = { name: "", email: "", message: "" }
+  const [ contact, setContact ] = useState(defaultContact)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios({
+      method: "POST", 
+      url:"http://localhost:3002/send", 
+      data: contact
+    }).then((response)=>{
+      console.log(response)
+      if (response.data.status === 'success'){
+        alert("Message Sent.")
+        resetForm()
+      }else if(response.data.status === 'fail'){
+        alert("Message failed to send.")
       }
-    
-    onEmailChange(event) {
-      this.setState({email: event.target.value})
-      }
-    
-    onMessageChange(event) {
-      this.setState({message: event.target.value})
-      }
-
-  render() {
-    return(
-      <body>
-        <div className="container">
-          <div className="row">
-            <div className="col-4 col-md-2">
-                <h2>Contact</h2>
-            </div>
-            <hr width="1100" />
+    })
+  }
+  const resetForm = () => {
+    setContact(defaultContact)
+  }
+  const onFieldChange = (event) => {
+    event.preventDefault()
+    const newContact = {...contact}
+    newContact[event.target.name] = event.target.value
+    setContact(newContact)
+  }
+  return(
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col-4 col-md-2">
+            <h2>Contact</h2>
           </div>
-          <div className="row">
-            <div className="col-12 col-md-12">
-              <form onSubmit={this.handleSubmit.bind(this)} method="POST">
-                <div className="form-group">
-                    <label for="exampleFormControlInput1">Name</label>
-                    <input type="name" className="form-control" id="exampleFormControlInput1" placeholder="Name" value={this.state.name} onChange={this.onNameChange.bind(this)}></input>
-                </div>
-                <div className="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value={this.state.email} onChange={this.onEmailChange.bind(this)}></input>
-                </div>
-                <div className="form-group">
-                    <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value={this.state.message} onChange={this.onMessageChange.bind(this)}></textarea>
-                </div>
-              </form>
-              <input className="btn btn-primary" type="submit" value="Submit" ></input>
-            </div>
+          <hr width="1100" />
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-12">
+            <form method="POST">
+              <div className="form-group">
+                <label htmlFor="exampleFormControlInput1">Name</label>
+                <input type="name" name="name" className="form-control" id="exampleFormControlInput1" placeholder="Name" value={contact.name} onChange={onFieldChange}></input>
+              </div>
+              <div className="form-group">
+                <label htmlFor="exampleFormControlInput1">Email address</label>
+                <input type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value={contact.email} onChange={onFieldChange}></input>
+              </div>
+              <div className="form-group">
+                <label htmlFor="exampleFormControlTextarea1">Message</label>
+                <textarea name="message" className="form-control" id="exampleFormControlTextarea1" rows="3" value={contact.message} onChange={onFieldChange}></textarea>
+              </div>
+            </form>
+            <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+            {/* <input className="btn btn-primary" type="submit" value="Submit" ></input> */}
           </div>
         </div>
-      </body>
-    );
-  }
+      </div>
+    </>
+  );
 }
-
 export default Contact;
