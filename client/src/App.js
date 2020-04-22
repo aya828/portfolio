@@ -1,24 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Component } from 'react';
+// import { Link, animateScroll as scroll } from "react-scroll";
 import Home from "./components/home/home";
 import Navbar from "./components/navbar/navbar";
 import Portfolio from "./components/portfolio/portfolio";
 import Contact from "./components/contact/contact";
-import Wrapper from "./components/Wrapper";
+import Section from "./components/navbar/section";
 
-function App() {
-  return (
-    <Router>
-    <div>
-      <Navbar />
-      <Wrapper>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/portfolio" component={Portfolio} />
-        <Route exact path="/contact" component={Contact} />
-      </Wrapper>
-    </div>
-  </Router>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        <Section
+          title="Home"
+          subtitle={Home}
+          id="home"
+        />
+        <Section
+          title="Portfolio"
+          subtitle={Portfolio}
+          id="portfolio"
+        />
+        <Section
+          title="Contact"
+          subtitle={Contact}
+          id="contact"
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

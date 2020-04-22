@@ -1,36 +1,58 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { Component } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 import "./navbar";
 
-function Navbar() {
+class Navbar extends Component() {
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
-  const location = useLocation();
-
-  return(
-    <ul className="nav nav-tabs">
-    <li className="nav-item">
-      <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
-        Home
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link
-        to="/portfolio"
-        className={location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}
-      >
-        Portfolio
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link
-        to="/contact"
-        className={location.pathname === "/contact" ? "nav-link active" : "nav-link"}
-      >
-        Contact
-      </Link>
-    </li>
-  </ul>
-  )
+  render() {
+    return (
+      <nav className="nav" id="navbar">
+      <div className="nav-content">
+        <ul className="nav-items">
+          <li className="nav-item">
+            <Link
+              activeClass="active"
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              activeClass="active"
+              to="portfolio"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Portfolio
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    );
+  }
 }
 
 export default Navbar;
