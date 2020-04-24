@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/navbar";
 import Portfolio from "./components/portfolio/portfolio";
 import Contact from "./components/contact/contact";
 import Section from "./components/navbar/section";
+// import Navbar from "react-scroll";
 
 class App extends Component {
   render() {
@@ -13,17 +14,17 @@ class App extends Component {
         <Navbar />
         <Section
           title="Home"
-          subtitle={Home}
+          body={<Home />}
           id="home"
         />
         <Section
           title="Portfolio"
-          subtitle={Portfolio}
+          body={<Portfolio />}
           id="portfolio"
         />
         <Section
           title="Contact"
-          subtitle={Contact}
+          body={<Contact />}
           id="contact"
         />
       </div>

@@ -1,16 +1,25 @@
 import React, { Component } from "react";
+// import logo from "../../logo.png";
 import { Link, animateScroll as scroll } from "react-scroll";
 import "./navbar";
 
-class Navbar extends Component() {
+class Navbar extends Component {
+  
+
   scrollToTop = () => {
     scroll.scrollToTop();
   };
 
   render() {
     return (
-      <nav className="nav" id="navbar">
+      // <nav className="nav" id="navbar">
       <div className="nav-content">
+      {/* <img
+        src={logo}
+        className="nav-logo"
+        alt="Logo"
+        onClick={this.scrollToTop}
+      /> */}
         <ul className="nav-items">
           <li className="nav-item">
             <Link
@@ -50,7 +59,7 @@ class Navbar extends Component() {
           </li>
         </ul>
       </div>
-    </nav>
+    // </nav>
     );
   }
 }
