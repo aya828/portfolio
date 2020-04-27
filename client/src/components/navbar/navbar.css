@@ -1,50 +1,19 @@
-body {
+/* body {
   background: url("herringbone.png");
+} */
+.name {
+  text-align: right;
+  color: white;
+  font-size: xx-large;
 }
 
-header {
-  background-color: white;
-  margin-top: -30px;
-}
-
-h1, h2 {
+ul.nav-items {
+  background-color: #666666;
+  /* margin-left: 50px; */
   font-family: 'Georgia', Times, 'Times New Roman', serif;
   color: white;
+  text-align: right;
   padding: 10px;
-}
-
-/* Name in header with blue background */
-nav h1 {
-  display: inline-table;
-  border: 1px solid #4aaaa5;
-  background-color: #4aaaa5;
-  padding-bottom: 4px;
-  margin-top: 20px;
-  text-align: center;
-  margin-bottom: -8px;
-}
-
-h2 {
-  color: #4aaaa5;
-  padding-left: 30px;
-  padding-top: 10px;
-}
-
-/* navbar right */
-ul.ml-auto {
   padding-right: 150px;
-}
-
-div.container {
-  border: 1px solid white;
-  background-color: white;
-  margin-top: 30px;
-  margin-bottom: 100px;
-}
-
-/* Text for about me page */
-.text {
-  line-height: 40px;
-  color: #666666;
-  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  width: 100%;
 }

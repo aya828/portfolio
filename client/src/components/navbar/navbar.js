@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import logo from "../../logo.png";
 import { Link, animateScroll as scroll } from "react-scroll";
-import "./navbar";
+import "./navbar.css";
 
 class Navbar extends Component {
   
@@ -12,7 +12,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      // <nav className="nav" id="navbar">
+      // <nav className="navbar" id="navbar">
       <div className="nav-content">
       {/* <img
         src={logo}
@@ -21,6 +21,7 @@ class Navbar extends Component {
         onClick={this.scrollToTop}
       /> */}
         <ul className="nav-items">
+          <p className="name">Aya Yoshida</p>
           <li className="nav-item">
             <Link
               activeClass="active"
