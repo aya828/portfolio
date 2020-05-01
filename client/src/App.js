@@ -5,13 +5,14 @@ import Navbar from "./components/navbar/navbar";
 import Portfolio from "./components/portfolio/portfolio";
 import Contact from "./components/contact/contact";
 import Section from "./components/navbar/section";
-// import Navbar from "react-scroll";
+import Images from "./components/carousel/carousel"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Navbar />
+        <Images />
         <Section
           title="Home"
           body={<Home />}

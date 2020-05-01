@@ -21,7 +21,9 @@ class Navbar extends Component {
         onClick={this.scrollToTop}
       /> */}
         <ul className="nav-items">
-          <p className="name">Aya Yoshida</p>
+          <p className="name">Aya Yoshida
+          </p>
+          <p>github.com/aya828</p>
           <li className="nav-item">
             <Link
               activeClass="active"

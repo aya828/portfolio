@@ -1,0 +1,43 @@
+.carousel-inner {
+  width: 850px;
+  margin: auto;
+}
+
+.d-block {
+  height: 400px;
+  margin-top: 0px;
+  padding-top: 0;
+
+}
+
+.h3 {
+  color: #4aaaa5;
+}
+
+.info {
+  color: #4aaaa5;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: #4aaaa5;
+}
+
+.carousel-control-prev-icon:after
+{
+  content: '<';
+  font-size: 55px;
+  color: #4aaaa5;
+}
