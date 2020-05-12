@@ -1,4 +1,4 @@
-h1 {
+h1 h4 {
   font-family: 'Georgia', Times, 'Times New Roman', serif;
   color: #4aaaa5;
   padding: 10px;
@@ -21,6 +21,12 @@ h1 {
 } */
 
 h2 {
+  color: #4aaaa5;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.git {
   color: #4aaaa5;
   padding-left: 30px;
   padding-top: 10px;

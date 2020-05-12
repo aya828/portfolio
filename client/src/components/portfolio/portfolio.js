@@ -9,7 +9,10 @@ function Portfolio() {
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-12 col-lg-12">
-            <h2>Portfolio</h2>
+          <h2>Portfolio
+          <br></br>
+          <h4>github.com/aya828</h4>
+        </h2>
           </div>
           <hr width="1100" />
         </div>

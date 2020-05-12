@@ -1,19 +1,23 @@
-/* body {
-  background: url("herringbone.png");
-} */
 .name {
   text-align: right;
   color: white;
   font-size: xx-large;
 }
 
+.navbar {
+  margin: -50px;
+  margin-top: -10px;
+  position: sticky;
+}
+
 ul.nav-items {
   background-color: #666666;
-  /* margin-left: 50px; */
   font-family: 'Georgia', Times, 'Times New Roman', serif;
   color: white;
   text-align: right;
-  padding: 10px;
   padding-right: 150px;
   width: 100%;
+  list-style: none;
+  z-index: 1;
+  top: 0;
 }

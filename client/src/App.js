@@ -6,6 +6,7 @@ import Portfolio from "./components/portfolio/portfolio";
 import Contact from "./components/contact/contact";
 import Section from "./components/navbar/section";
 import Images from "./components/carousel/carousel"
+import Footer from "./components/footer/footer"
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
           body={<Contact />}
           id="contact"
         />
+        <Footer />
       </div>
     );
   }

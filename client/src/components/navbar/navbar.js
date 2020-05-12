@@ -13,17 +13,10 @@ class Navbar extends Component {
   render() {
     return (
       // <nav className="navbar" id="navbar">
-      <div className="nav-content">
-      {/* <img
-        src={logo}
-        className="nav-logo"
-        alt="Logo"
-        onClick={this.scrollToTop}
-      /> */}
+      <div className="navbar fixed-top nav-content">
         <ul className="nav-items">
           <p className="name">Aya Yoshida
           </p>
-          <p>github.com/aya828</p>
           <li className="nav-item">
             <Link
               activeClass="active"

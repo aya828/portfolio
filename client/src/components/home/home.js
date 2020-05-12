@@ -5,10 +5,7 @@ function Home() {
   return (
     <body>
       <div className="container">
-        <h2 className="intro">
-          Hello, my name is Aya. I am a web deveoper living in Alexandria, VA.
-        </h2>
-        <br></br>
+        <h2>About</h2>
         <div className="row">
           <div className="col-12 col-md-12 col-lg-12">
             {/* <h2>About</h2> */}
@@ -32,9 +29,11 @@ function Home() {
               University Full Stack Web Development Coding Bootcamp and am now pursuing my career in web development.
             </p>
             <p className="text">
-              {" "}
               I have experience in HTML, CSS, Bootstrap, JavaScript, JQuery, React.js, Node.js, Express.js, MySQL, MongoDB, responsive designs,
               and Git.
+            </p>
+            <p className="text">
+              When I'm not coding and designing, I enjoy making jewelry, working out, kickboxing, cooking, or playing with my two pups Baxter and Jackson.
             </p>
           </div>
         </div>
